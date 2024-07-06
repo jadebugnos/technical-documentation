@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Technical Documentation</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>DataWizard Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Features">Features</a></li>
+            <li><a class="nav-link" href="#Technologies_Used">Technologies Used</a></li>
+            <li><a class="nav-link" href="#Installation">Installation</a></li>
+            <li><a class="nav-link" href="#Usage">Usage</a></li>
+            <li><a class="nav-link" href="#Modules_and_Functions">Modules and Functions</a></li>
+            <li><a class="nav-link" href="#Examples">Examples</a></li>
+            <li><a class="nav-link" href="#Contributing">Contributing</a></li>
+            <li><a class="nav-link" href="#License">License</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section id="Introduction" class="main-section">
+            <header>Introduction</header>
+            <p>DataWizard is a powerful and flexible Python package designed to simplify data manipulation and analysis. Whether you're a data scientist, analyst, or developer, DataWizard provides a suite of tools that can handle everything from data loading and cleaning to advanced statistical analysis and visualization. This package aims to streamline your workflow, allowing you to focus on deriving insights from your data rather than getting bogged down by the intricacies of data preprocessing.</p>
+        </section>
+        <section id="Features" class="main-section">
+            <header>Features</header>
+            <p>DataWizard comes equipped with a variety of features designed to make data analysis more efficient and effective:</p>
+            <ul>
+                <li>Data Loading: Easily load data from multiple formats including CSV, Excel, and JSON files.</li>
+                <li>Data Cleaning: Comprehensive tools for handling missing values, removing duplicates, and correcting data types.</li>
+                <li>Data Transformation: Functions for normalizing, scaling, and encoding your data to prepare it for analysis.</li>
+                <li>Data Visualization: Create a range of visualizations including histograms, scatter plots, and box plots to better understand your data.</li>
+                <li>Statistical Analysis: Perform advanced statistical analysis to uncover trends, correlations, and other insights within your data.</li>
+                <li>Large Dataset Support: Optimized to handle large datasets efficiently, ensuring that performance remains high even with substantial amounts of data.</li>
+            </ul>
+        </section>
+        <section id="Technologies_Used" class="main-section">
+            <header>Technologies Used</header>
+            <p>DataWizard leverages several powerful libraries in Python, ensuring robust performance and extensive functionality:</p>
+            <ul>
+                <li>Python 3.8+: The core language for development, offering a balance of readability and power.</li>
+                <li>pandas: Essential for data manipulation and analysis, providing data structures and operations for manipulating numerical tables and time series.</li>
+                <li>numpy: Supports large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.</li>
+                <li>matplotlib: A plotting library used for creating static, animated, and interactive visualizations in Python.</li>
+                <li>seaborn: Built on top of matplotlib, it provides a high-level interface for drawing attractive and informative statistical graphics.</li>
+            </ul>
+        </section>
+        <section id="Installation" class="main-section">
+            <header>Installation</header>
+            <h3>Prerequisites</h3>
+            <p>Before installing DataWizard, ensure that you have Python 3.8 or higher installed on your machine. You can download Python from the official Python website.</p>
+            
+            <h3>Installing with pip</h3>
+            <p>The easiest way to install DataWizard is via pip. Open your terminal or command prompt and run the following command:</p>
+            <pre><code>pip install datawizard</code></pre>
+            <p>This will download and install the DataWizard package along with all its dependencies.</p>
+            
+            <h3>Cloning the Repository</h3>
+            <p>If you prefer to work directly with the source code, you can clone the repository from GitHub. This method is particularly useful for contributing to the project or for debugging purposes:</p>
+            <pre><code>git clone https://github.com/yourusername/DataWizard.git<br>cd DataWizard<br>pip install -r requirements.txt</code></pre>
+            <p>This command will clone the repository to your local machine and install all required dependencies listed in the requirements.txt file.</p>
+        </section>        
+        <section id="Usage" class="main-section">
+            <header>Usage</header>
+            <h3>Basic Usage</h3>
+            <p>To start using DataWizard, you need to import the package into your Python script. Here's a basic example that demonstrates how to load, clean, transform, visualize, and analyze data:</p>
+            <pre><code class="small-code">
+                import datawizard as dw
+                
+                # Load data from a CSV file
+                data = dw.load_data('data.csv')
+                
+                # Clean the loaded data by removing missing values and duplicates
+                cleaned_data = dw.clean_data(data)
+                
+                # Transform the cleaned data by normalizing specific columns
+                transformed_data = dw.transform_data(cleaned_data, transformations=['normalize'])
+                
+                # Visualize the distribution of a specific column
+                dw.plot_data(transformed_data, 'column_name')
+                
+                # Perform statistical analysis on the column to get insights like mean, median, and standard deviation
+                stats = dw.analyze_data(transformed_data, 'column_name')
+                print(stats)
+            </code></pre>
+            </code>
+            <p>This example showcases the primary functionalities of DataWizard, providing a complete workflow from raw data to analysis.</p>                
+            <h3>Command Line Interface</h3>
+            <p>For quick and convenient operations, DataWizard includes a command-line interface (CLI). This allows you to perform tasks without writing a full script. For instance, to generate a report from a CSV file, use the following command:</p>
+            <code>datawizard -i data.csv -o report.html</code>
+            <p>This command will load the data from <code>data.csv</code>, process it, and output a comprehensive HTML report to <code>report.html.</code></p>
+        </section>
+        <section id="Modules_and_Functions" class="main-section">
+            <header>Modules and Functions</header>
+            
+            <h3>Overview</h3>
+            <p>DataWizard is composed of several modules, each providing specific functionalities for data manipulation and analysis. Here are brief descriptions of the key modules:</p>
+            
+            <ul>
+                <li>
+                    <strong>data_loading</strong>: Functions to load data from various file formats.
+                </li>
+                <li>
+                    <strong>data_cleaning</strong>: Functions to clean and preprocess data.
+                </li>
+                <li>
+                    <strong>data_transformation</strong>: Functions to transform and encode data.
+                </li>
+                <li>
+                    <strong>data_visualization</strong>: Functions to create visual representations of data.
+                </li>
+                <li>
+                    <strong>data_analysis</strong>: Functions to perform statistical analysis on data.
+                </li>
+            </ul>
+            
+            <h3>Example Functions</h3>
+            
+            <h4>data_loading.load_data</h4>
+            <p>Loads data from a file into a pandas DataFrame. This function supports various file formats and allows customization of the delimiter for CSV files.</p>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>filepath (str)</code>: The path to the file containing the data.</li>
+                <li><code>delimiter (str)</code>: The delimiter used in the file, with a default value of , .</li>
+            </ul>
+            <p><strong>Returns:</strong> A pandas DataFrame containing the loaded data.</p>
+            
+            <h4>data_cleaning.clean_data</h4>
+            <p>Cleans the input DataFrame by handling common data issues such as missing values and outliers. This function ensures that the data is in a suitable format for analysis.</p>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>df (pandas.DataFrame)</code>: The DataFrame to be cleaned.</li>
+            </ul>
+            <p><strong>Returns:</strong> A cleaned pandas DataFrame.</p>
+            
+            <h4>data_transformation.transform_data</h4>
+            <p>Transforms the input DataFrame by applying specified transformations such as normalization or standardization.</p>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code class="inline_code">df (pandas.DataFrame)</code>: The DataFrame to be transformed.</li>
+                <li><code>transformations (list)</code>: A list of transformations to apply (e.g., <code id="inline_code">['normalize', 'standardize']</code>).</li>
+            </ul>
+            <p><strong>Returns:</strong> A transformed pandas DataFrame.</p>
+            
+            
+            
+        </section>
+        
+        <section id="Examples" class="main-section">
+            <header>Examples</header>
+            <h3>Example 1: Data Cleaning and Visualization</h3>
+            <pre><code>
+                import datawizard as dw
+
+                # Load data from a CSV file
+                data = dw.load_data('sales_data.csv')
+
+                # Clean the data by handling missing values and removing duplicates
+                cleaned_data = dw.clean_data(data)
+
+                # Plot the distribution of sales data
+                dw.plot_data(cleaned_data, 'sales')
+            </code></pre>
+            <p>In this example, we load sales data, clean it, and create a histogram to visualize the distribution of sales values.</p>
+            <h3>Example 2: Statistical Analysis</h3>
+            <pre><code>
+                import datawizard as dw
+
+                # Load data from a CSV file
+                data = dw.load_data('employee_data.csv')
+
+                # Clean the data by handling missing values and removing duplicates
+                cleaned_data = dw.clean_data(data)
+
+                # Analyze the salary column to get statistical insights
+                stats = dw.analyze_data(cleaned_data, 'salary')
+                print(stats)
+            </code></pre>
+            <p>This example demonstrates how to load employee data, clean it, and perform statistical analysis on the salary column to obtain insights like mean and median.</p>
+        </section>
+        <section id="Contributing" class="main-section">
+            <header>Contributing</header>
+            <p>We welcome and appreciate contributions to DataWizard. If you would like to contribute, please follow these steps:</p>
+            <ul>
+                <li>Fork the Repository: Create a fork of the DataWizard repository on GitHub.</li>
+                <li>Create a New Branch: Create a new branch for your feature or bug fix (git checkout -b feature-branch).</li>
+                <li>Make Your Changes: Implement your changes in the new branch.</li>
+                <li>Commit Your Changes: Commit your changes with a clear and descriptive message (git commit -m 'Add new feature').</li>
+                <li>Push to the Branch: Push your changes to your forked repository (git push origin feature-branch).</li>
+                <li>Create a Pull Request: Submit a pull request to the original DataWizard repository.</li>
+            </ul>
+            <p>Please ensure that your code adheres to our coding standards and includes tests for any new features or bug fixes.</p>
+        </section>
+        <section id="License" class="main-section">
+            <header>License</header>
+            <p>DataWizard is licensed under the MIT License. This permissive license allows you to freely use, modify, and distribute the software. See the <a href="https://opensource.org/license/MIT" target="_blank" id="license_link">LICENSE</a> file for more details.</p>
+        </section>
+    </main>
+</body>
+</html>
